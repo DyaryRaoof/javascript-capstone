@@ -45,3 +45,9 @@ header ul {
 #bottom-header li {
   font-size: 15px;
 }
+
+footer div {
+  width: 100%;
+  padding: 40px 25px;
+  border-top: 1px solid black;
+}
