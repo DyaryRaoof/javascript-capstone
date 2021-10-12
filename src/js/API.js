@@ -7,7 +7,7 @@ export default class TvGetters {
         Accept: '*',
       },
     });
-    return response.json()
+    return response.json();
   }
 
   static async getEpisodes(id) {
@@ -18,6 +18,6 @@ export default class TvGetters {
         Accept: '*',
       },
     });
-    return response.json()
+    return response.json();
   }
-};
+}
