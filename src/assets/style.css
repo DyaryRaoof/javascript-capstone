@@ -98,6 +98,11 @@ footer div {
   align-items: center;
 }
 
+.episode img {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
 #episode-description-wrapper img {
   width: 40%;
 }
@@ -161,11 +166,6 @@ footer div {
 
 #close-button {
   cursor: pointer;
-}
-
-.episode img {
-  width: 100%;
-  margin-bottom: 8px;
 }
 
 .d-flex {

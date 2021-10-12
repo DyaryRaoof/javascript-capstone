@@ -1,4 +1,4 @@
-import { sendComment, getComments } from './API.js';
+import { sendComment, getComments } from './api.js';
 
 const addCommentsForm = document.querySelector('#add-comments-form');
 const commentsTable = document.querySelector('#comments-table');

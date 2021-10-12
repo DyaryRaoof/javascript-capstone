@@ -1,8 +1,7 @@
 import '../assets/style.css';
 import './comments.js';
-import {TvGetters, createNewApp} from './API.js';
+import { TvGetters, createNewApp } from './api.js';
 import DomPopulating from './domPop.js';
-
 
 const saveAppId = async () => {
   let appId;
