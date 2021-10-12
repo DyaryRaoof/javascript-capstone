@@ -12,7 +12,6 @@ const createNewApp = async () => {
 const sendComment = async (userName, comment, itemId) => {
   const appId = localStorage.getItem('appId');
   const endpoint = `apps/${appId}/comments`;
-  console.log(userName);
   const data = { username: userName, comment, item_id: itemId };
   const result = await fetch(BASE_URL + endpoint, {
     method: 'POST',

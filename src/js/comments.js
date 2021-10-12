@@ -51,13 +51,12 @@ const implementCloseButton = () => {
   });
 };
 
-const showCommentsPopup = async (episode) => {
+const showCommentsPopup = async () => {
   commentsPopup.classList.remove('hide-popup');
   implementCloseButton();
   //   populatePopup(episode);
   const [comments, status] = await getCommnets('1234');
   if (status === 200) {
-    console.log(comments);
     renderCommnets(comments);
   }
 };
