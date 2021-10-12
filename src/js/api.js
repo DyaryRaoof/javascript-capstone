@@ -24,7 +24,7 @@ const sendComment = async (userName, comment, itemId) => {
   return text;
 };
 
-const getCommnets = async (itemId) => {
+const getComments = async (itemId) => {
   const appId = localStorage.getItem('appId');
   const endpoint = `apps/${appId}/comments?item_id=${itemId}`;
   const result = await fetch(BASE_URL + endpoint);
@@ -34,4 +34,4 @@ const getCommnets = async (itemId) => {
 
 module.exports.createNewApp = createNewApp;
 module.exports.sendComment = sendComment;
-module.exports.getCommnets = getCommnets;
+module.exports.getComments = getComments;

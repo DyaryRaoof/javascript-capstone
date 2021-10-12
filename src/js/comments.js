@@ -1,10 +1,10 @@
-import { sendComment, getCommnets } from './api.js';
+import { sendComment, getComments } from './api.js';
 
 const addCommentsForm = document.querySelector('#add-comments-form');
 const commentsTable = document.querySelector('#comments-table');
 const commentsPopup = document.querySelector('#comments');
 
-const addCommnet = async () => {
+const addComment = async () => {
   const name = addCommentsForm.elements[0];
   const comment = addCommentsForm.elements[1];
   const date = new Date().toLocaleDateString();
@@ -20,10 +20,10 @@ const addCommnet = async () => {
 
 addCommentsForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  addCommnet();
+  addComment();
 });
 
-const renderCommnets = async (comments) => {
+const renderComments = async (comments) => {
   comments.forEach((comment) => {
     const data = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
     const div = document.createElement('div');
@@ -55,9 +55,9 @@ const showCommentsPopup = async () => {
   commentsPopup.classList.remove('hide-popup');
   implementCloseButton();
   //   populatePopup(episode);
-  const [comments, status] = await getCommnets('1234');
+  const [comments, status] = await getComments('1234');
   if (status === 200) {
-    renderCommnets(comments);
+    renderComments(comments);
   }
 };
 
