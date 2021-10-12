@@ -40,11 +40,14 @@ header ul {
 }
 
 #bottom-header {
+  display: flex;
+  justify-content: center;
   padding: 0 15px;
 }
 
 #bottom-header li {
-  font-size: 15px;
+  font-size: 20px;
+  padding: 10px;
 }
 
 footer div {
@@ -76,6 +79,20 @@ footer div {
 }
 
 #episode-description-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  margin: 60px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 25px 10px;
+}
+
+.episode {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,4 +161,35 @@ footer div {
 
 #close-button {
   cursor: pointer;
+}
+
+.episode img {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.d-flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.d-flex p {
+  padding: 5px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.likes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+}
+
+.comment-btn {
+  margin-top: 8px;
+  width: 75%;
+  height: 30px;
+  font-size: 1em;
 }

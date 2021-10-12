@@ -16,7 +16,7 @@
   \********************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\n  font-family: 'Ubuntu', sans-serif;\\n}\\n\\nheader ul > li {\\n  padding: 3px;\\n  font-size: 20px;\\n  cursor: pointer;\\n}\\n\\nfooter a,\\nheader ul > li > a {\\n  color: black;\\n  text-decoration: none;\\n}\\n\\n#logo {\\n  display: flex;\\n  align-items: center;\\n}\\n\\n#logo,\\n#logo > span {\\n  padding: 3px;\\n  font-size: 40px;\\n  color: red;\\n}\\n\\n#top-header li {\\n  padding: 20px;\\n}\\n\\nheader ul {\\n  list-style: none;\\n  padding: 0;\\n  margin: 0;\\n  display: flex;\\n  align-items: center;\\n  flex-wrap: wrap;\\n}\\n\\n#bottom-header {\\n  padding: 0 15px;\\n}\\n\\n#bottom-header li {\\n  font-size: 15px;\\n}\\n\\nfooter div {\\n  width: 100%;\\n  padding: 40px 25px;\\n  border-top: 1px solid black;\\n}\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://javascript-capstone/./src/assets/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\r\\n  font-family: 'Ubuntu', sans-serif;\\r\\n}\\r\\n\\r\\nheader ul > li {\\r\\n  padding: 3px;\\r\\n  font-size: 20px;\\r\\n  cursor: pointer;\\r\\n}\\r\\n\\r\\nfooter a,\\r\\nheader ul > li > a {\\r\\n  color: black;\\r\\n  text-decoration: none;\\r\\n}\\r\\n\\r\\n#logo {\\r\\n  display: flex;\\r\\n  align-items: center;\\r\\n}\\r\\n\\r\\n#logo,\\r\\n#logo > span {\\r\\n  padding: 3px;\\r\\n  font-size: 40px;\\r\\n  color: red;\\r\\n}\\r\\n\\r\\n#top-header li {\\r\\n  padding: 20px;\\r\\n}\\r\\n\\r\\nheader ul {\\r\\n  list-style: none;\\r\\n  padding: 0;\\r\\n  margin: 0;\\r\\n  display: flex;\\r\\n  align-items: center;\\r\\n  flex-wrap: wrap;\\r\\n}\\r\\n\\r\\n#bottom-header {\\r\\n  display: flex;\\r\\n  justify-content: center;\\r\\n  padding: 0 15px;\\r\\n}\\r\\n\\r\\n#bottom-header li {\\r\\n  font-size: 20px;\\r\\n  padding: 10px;\\r\\n}\\r\\n\\r\\nfooter div {\\r\\n  width: 100%;\\r\\n  padding: 40px 25px;\\r\\n  border-top: 1px solid black;\\r\\n}\\r\\n\\r\\n#comments {\\r\\n  border: 2px solid black;\\r\\n  padding: 10px;\\r\\n  margin: 0 20%;\\r\\n  background-color: white;\\r\\n  position: absolute;\\r\\n  top: 0;\\r\\n  left: 0;\\r\\n  z-index: 111;\\r\\n}\\r\\n\\r\\n#close-button-wrapper {\\r\\n  width: 100%;\\r\\n  display: flex;\\r\\n  justify-content: flex-end;\\r\\n}\\r\\n\\r\\n#close-button-wrapper span {\\r\\n  margin-left: auto;\\r\\n  padding: 10px;\\r\\n}\\r\\n\\r\\n#episode-description-wrapper {\\r\\n  display: flex;\\r\\n  flex-direction: column;\\r\\n  align-items: center;\\r\\n}\\r\\n\\r\\n.container {\\r\\n  display: grid;\\r\\n  margin: 60px;\\r\\n  justify-content: center;\\r\\n  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\\r\\n  grid-gap: 25px 10px;\\r\\n}\\r\\n\\r\\n.episode {\\r\\n  display: flex;\\r\\n  flex-direction: column;\\r\\n  align-items: center;\\r\\n}\\r\\n\\r\\n#episode-description-wrapper img {\\r\\n  width: 40%;\\r\\n}\\r\\n\\r\\n#episode-description-wrapper h1 {\\r\\n  text-align: center;\\r\\n}\\r\\n\\r\\n#episode-description-items {\\r\\n  display: grid;\\r\\n  grid-template-columns: 1fr 1fr;\\r\\n  grid-template-rows: 1fr 1fr;\\r\\n}\\r\\n\\r\\n#episode-description-items span {\\r\\n  padding: 10px;\\r\\n  font-size: 17px;\\r\\n  margin: 0 10%;\\r\\n}\\r\\n\\r\\n#comments-table-wrapper {\\r\\n  width: 50%;\\r\\n  margin: 0 auto;\\r\\n}\\r\\n\\r\\n#comments-table-wrapper h2 {\\r\\n  text-align: center;\\r\\n}\\r\\n\\r\\n#comments form {\\r\\n  display: flex;\\r\\n  flex-direction: column;\\r\\n  margin: 5% 30%;\\r\\n}\\r\\n\\r\\n#comments form input {\\r\\n  width: 100px;\\r\\n}\\r\\n\\r\\n#comments form textarea {\\r\\n  height: 100px;\\r\\n  resize: none;\\r\\n}\\r\\n\\r\\n#comments form input,\\r\\n#comments form textarea {\\r\\n  border: 2px solid black;\\r\\n  margin: 10px;\\r\\n}\\r\\n\\r\\n#comments form button {\\r\\n  width: 100px;\\r\\n  margin: 10px;\\r\\n  background-color: white;\\r\\n  font-weight: bold;\\r\\n}\\r\\n\\r\\n.hide-popup {\\r\\n  display: none;\\r\\n}\\r\\n\\r\\n#close-button {\\r\\n  cursor: pointer;\\r\\n}\\r\\n\\r\\n.episode img {\\r\\n  width: 100%;\\r\\n  margin-bottom: 8px;\\r\\n}\\r\\n\\r\\n.d-flex {\\r\\n  display: flex;\\r\\n  width: 100%;\\r\\n  justify-content: space-between;\\r\\n}\\r\\n\\r\\n.d-flex p {\\r\\n  padding: 5px;\\r\\n  margin: 0;\\r\\n  font-weight: 500;\\r\\n}\\r\\n\\r\\n.likes {\\r\\n  display: flex;\\r\\n  flex-direction: column;\\r\\n  align-items: center;\\r\\n  font-size: 13px;\\r\\n}\\r\\n\\r\\n.comment-btn {\\r\\n  margin-top: 8px;\\r\\n  width: 75%;\\r\\n  height: 30px;\\r\\n  font-size: 1em;\\r\\n}\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://javascript-capstone/./src/assets/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -110,13 +110,63 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/js/API.js":
+/*!***********************!*\
+  !*** ./src/js/API.js ***!
+  \***********************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ TvGetters)\n/* harmony export */ });\n/* module decorator */ module = __webpack_require__.hmd(module);\nclass TvGetters {\r\n  static async getSeasons(id) {\r\n    const response = await fetch(`https://api.tvmaze.com/shows/${id}/seasons`, {\r\n      method: 'GET',\r\n      headers: {\r\n        'User-Agent': 'SchoolProject/1.0 This is a school project about working with APIS',\r\n        Accept: '*',\r\n      },\r\n    });\r\n    return response.json();\r\n  }\r\n\r\n  static async getEpisodes(id) {\r\n    const response = await fetch(`https://api.tvmaze.com/seasons/${id}/episodes`, {\r\n      method: 'GET',\r\n      headers: {\r\n        'User-Agent': 'SchoolProject/1.0 This is a school project about working with APIS',\r\n        Accept: '*',\r\n      },\r\n    });\r\n    return response.json();\r\n  }\r\n}\r\n\r\nconst BASE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';\r\n\r\nconst createNewApp = async () => {\r\n  const endpoint = 'apps';\r\n  const result = await fetch(BASE_URL + endpoint, {\r\n    method: 'POST',\r\n  });\r\n  const appId = await result.text();\r\n  return appId;\r\n};\r\n\r\nconst sendComment = async (userName, comment, itemId) => {\r\n  const appId = localStorage.getItem('appId');\r\n  const endpoint = `apps/${appId}/comments`;\r\n  const data = { username: userName, comment, item_id: itemId };\r\n  const result = await fetch(BASE_URL + endpoint, {\r\n    method: 'POST',\r\n    body: JSON.stringify(data),\r\n    headers: {\r\n      'Content-Type': 'application/json; Charset=UTF-8',\r\n    },\r\n  });\r\n  const text = await result.text();\r\n  return text;\r\n};\r\n\r\nconst getComments = async (itemId) => {\r\n  const appId = localStorage.getItem('appId');\r\n  const endpoint = `apps/${appId}/comments?item_id=${itemId}`;\r\n  const result = await fetch(BASE_URL + endpoint);\r\n  const text = await result.json();\r\n  return [text, result.status];\r\n};\r\n\r\nmodule.exports.createNewApp = createNewApp;\r\nmodule.exports.sendComment = sendComment;\r\nmodule.exports.getComments = getComments;\n\n//# sourceURL=webpack://javascript-capstone/./src/js/API.js?");
+
+/***/ }),
+
+/***/ "./src/js/api.js":
+/*!***********************!*\
+  !*** ./src/js/api.js ***!
+  \***********************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ TvGetters)\n/* harmony export */ });\n/* module decorator */ module = __webpack_require__.hmd(module);\nclass TvGetters {\r\n  static async getSeasons(id) {\r\n    const response = await fetch(`https://api.tvmaze.com/shows/${id}/seasons`, {\r\n      method: 'GET',\r\n      headers: {\r\n        'User-Agent': 'SchoolProject/1.0 This is a school project about working with APIS',\r\n        Accept: '*',\r\n      },\r\n    });\r\n    return response.json();\r\n  }\r\n\r\n  static async getEpisodes(id) {\r\n    const response = await fetch(`https://api.tvmaze.com/seasons/${id}/episodes`, {\r\n      method: 'GET',\r\n      headers: {\r\n        'User-Agent': 'SchoolProject/1.0 This is a school project about working with APIS',\r\n        Accept: '*',\r\n      },\r\n    });\r\n    return response.json();\r\n  }\r\n}\r\n\r\nconst BASE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';\r\n\r\nconst createNewApp = async () => {\r\n  const endpoint = 'apps';\r\n  const result = await fetch(BASE_URL + endpoint, {\r\n    method: 'POST',\r\n  });\r\n  const appId = await result.text();\r\n  return appId;\r\n};\r\n\r\nconst sendComment = async (userName, comment, itemId) => {\r\n  const appId = localStorage.getItem('appId');\r\n  const endpoint = `apps/${appId}/comments`;\r\n  const data = { username: userName, comment, item_id: itemId };\r\n  const result = await fetch(BASE_URL + endpoint, {\r\n    method: 'POST',\r\n    body: JSON.stringify(data),\r\n    headers: {\r\n      'Content-Type': 'application/json; Charset=UTF-8',\r\n    },\r\n  });\r\n  const text = await result.text();\r\n  return text;\r\n};\r\n\r\nconst getComments = async (itemId) => {\r\n  const appId = localStorage.getItem('appId');\r\n  const endpoint = `apps/${appId}/comments?item_id=${itemId}`;\r\n  const result = await fetch(BASE_URL + endpoint);\r\n  const text = await result.json();\r\n  return [text, result.status];\r\n};\r\n\r\nmodule.exports.createNewApp = createNewApp;\r\nmodule.exports.sendComment = sendComment;\r\nmodule.exports.getComments = getComments;\n\n//# sourceURL=webpack://javascript-capstone/./src/js/api.js?");
+
+/***/ }),
+
+/***/ "./src/js/comments.js":
+/*!****************************!*\
+  !*** ./src/js/comments.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api.js */ \"./src/js/api.js\");\n\r\n\r\nconst addCommentsForm = document.querySelector('#add-comments-form');\r\nconst commentsTable = document.querySelector('#comments-table');\r\nconst commentsPopup = document.querySelector('#comments');\r\n\r\nconst addComment = async () => {\r\n  const name = addCommentsForm.elements[0];\r\n  const comment = addCommentsForm.elements[1];\r\n  const date = new Date().toLocaleDateString();\r\n  const data = `${date} ${name.value} : ${comment.value}`;\r\n\r\n  const div = document.createElement('div');\r\n  div.innerText = data;\r\n  const res = await (0,_api_js__WEBPACK_IMPORTED_MODULE_0__.sendComment)(name.value, comment.value, '1234');\r\n  if (res === 'Created') {\r\n    commentsTable.appendChild(div);\r\n  }\r\n};\r\n\r\naddCommentsForm.addEventListener('submit', (e) => {\r\n  e.preventDefault();\r\n  addComment();\r\n});\r\n\r\nconst renderComments = async (comments) => {\r\n  comments.forEach((comment) => {\r\n    const data = `${comment.creation_date} ${comment.username}: ${comment.comment}`;\r\n    const div = document.createElement('div');\r\n    div.innerText = data;\r\n    commentsTable.appendChild(div);\r\n  });\r\n};\r\n\r\n// const populatePopup = (episode) => {\r\n//   //   const episodeImage = document.querySelector('#episode-name img');\r\n//   //   const episodeName = document.querySelector('#episode-name');\r\n//   const episodeDescriptionItems = document.querySelector('.episode-description-item');\r\n//   //   episodeImage.src = '';\r\n//   //   episodeName.textContent = episode.name;\r\n//   episodeDescriptionItems[0].textContent = '';\r\n//   episodeDescriptionItems[1].textContent = '';\r\n//   episodeDescriptionItems[2].textContent = '';\r\n//   episodeDescriptionItems[3].textContent = '';\r\n// };\r\n\r\nconst implementCloseButton = () => {\r\n  const closeButton = document.querySelector('#close-button');\r\n  closeButton.addEventListener('click', () => {\r\n    commentsPopup.classList.add('hide-popup');\r\n  });\r\n};\r\n\r\nconst showCommentsPopup = async () => {\r\n  commentsPopup.classList.remove('hide-popup');\r\n  implementCloseButton();\r\n  //   populatePopup(episode);\r\n  const [comments, status] = await (0,_api_js__WEBPACK_IMPORTED_MODULE_0__.getComments)('1234');\r\n  if (status === 200) {\r\n    renderComments(comments);\r\n  }\r\n};\r\n\r\nshowCommentsPopup();\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showCommentsPopup);\r\n\n\n//# sourceURL=webpack://javascript-capstone/./src/js/comments.js?");
+
+/***/ }),
+
+/***/ "./src/js/domPop.js":
+/*!**************************!*\
+  !*** ./src/js/domPop.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ DomPopulating)\n/* harmony export */ });\n/* harmony import */ var _assets_no_image_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/no_image.png */ \"./src/assets/no_image.png\");\n\r\n\r\nclass DomPopulating {\r\n  static createSeason(n) {\r\n    const bHeader = document.getElementById('bottom-header');\r\n    bHeader.innerHTML = '';\r\n    let i = 0;\r\n    while (i < n) {\r\n      bHeader.innerHTML += `<li>Season ${i + 1}</li>`;\r\n      i += 1;\r\n    }\r\n  }\r\n\r\n  static createEpisodes(list) {\r\n    const epCont = document.querySelector('.container');\r\n    epCont.innerHTML = '';\r\n    list.forEach((ep) => {\r\n      if (ep.image === null) {\r\n        epCont.innerHTML += `<div class=\"episode\"><img src=\"${_assets_no_image_png__WEBPACK_IMPORTED_MODULE_0__}\" alt=\"\"><div class=\"d-flex\"><p>${ep.name}</p> <span class=\"likes\"><span class=\"material-icons\">favorite_border</span>0 likes</span></div><button class=\"comment-btn\" type=\"button\">Comments</button></div>`;\r\n      } else {\r\n        epCont.innerHTML += `<div class=\"episode\"><img src=\"${ep.image.medium}\" alt=\"\"><div class=\"d-flex\"><p>${ep.name}</p> <span class=\"likes\"><span class=\"material-icons\">favorite_border</span>0 likes</span></div><button class=\"comment-btn\" type=\"button\">Comments</button></div>`;\r\n      }\r\n    });\r\n  }\r\n}\n\n//# sourceURL=webpack://javascript-capstone/./src/js/domPop.js?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _assets_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/style.css */ \"./src/assets/style.css\");\n\n\n\n//# sourceURL=webpack://javascript-capstone/./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _assets_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/style.css */ \"./src/assets/style.css\");\n/* harmony import */ var _comments_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comments.js */ \"./src/js/comments.js\");\n/* harmony import */ var _API_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./API.js */ \"./src/js/API.js\");\n/* harmony import */ var _domPop_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./domPop.js */ \"./src/js/domPop.js\");\n\r\n\r\n\r\n\r\n\r\n\r\nconst saveAppId = async () => {\r\n  let appId;\r\n  appId = localStorage.getItem('appId');\r\n  if (!appId) {\r\n    appId = await (0,_API_js__WEBPACK_IMPORTED_MODULE_2__.createNewApp)();\r\n    localStorage.setItem('appId', appId);\r\n  }\r\n};\r\n\r\nwindow.addEventListener('load', () => {\r\n  saveAppId();\r\n});\r\n\r\nconst seasonListener = (info) => {\r\n  const seasonItems = document.querySelectorAll('#bottom-header li');\r\n  seasonItems.forEach((li, index) => {\r\n    li.addEventListener('click', async () => {\r\n      const { id } = info[index];\r\n      await _API_js__WEBPACK_IMPORTED_MODULE_2__.TvGetter.getEpisodes(id).then((ep) => {\r\n        const episodeList = ep;\r\n        _domPop_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].createEpisodes(episodeList);\r\n      });\r\n    });\r\n  });\r\n};\r\n\r\ndocument.addEventListener('click', async (event) => {\r\n  const { target } = event;\r\n  if (target.innerText === 'Stranger Things') {\r\n    await _API_js__WEBPACK_IMPORTED_MODULE_2__.TvGetter.getSeasons(2993).then((s) => {\r\n      const seasonInfo = s;\r\n      const seasonN = seasonInfo.length;\r\n      _domPop_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].createSeason(seasonN);\r\n      seasonListener(seasonInfo);\r\n    });\r\n  } else if (target.innerText === 'Heroes') {\r\n    await _API_js__WEBPACK_IMPORTED_MODULE_2__.TvGetter.getSeasons(134).then((s) => {\r\n      const seasonInfo = s;\r\n      const seasonN = seasonInfo.length;\r\n      _domPop_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].createSeason(seasonN);\r\n      seasonListener(seasonInfo);\r\n    });\r\n  } else if (target.innerText === 'Lost') {\r\n    await _API_js__WEBPACK_IMPORTED_MODULE_2__.TvGetter.getSeasons(123).then((s) => {\r\n      const seasonInfo = s;\r\n      const seasonN = seasonInfo.length;\r\n      _domPop_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].createSeason(seasonN);\r\n      seasonListener(seasonInfo);\r\n    });\r\n  }\r\n});\r\n\n\n//# sourceURL=webpack://javascript-capstone/./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/assets/no_image.png":
+/*!*********************************!*\
+  !*** ./src/assets/no_image.png ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"7a3ea9f256b6a13927ef.png\";\n\n//# sourceURL=webpack://javascript-capstone/./src/assets/no_image.png?");
 
 /***/ })
 
@@ -135,12 +185,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ass
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
-/******/ 			// no module.loaded needed
+/******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -171,6 +224,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ass
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/harmony module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.hmd = (module) => {
+/******/ 			module = Object.create(module);
+/******/ 			if (!module.children) module.children = [];
+/******/ 			Object.defineProperty(module, 'exports', {
+/******/ 				enumerable: true,
+/******/ 				set: () => {
+/******/ 					throw new Error('ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ' + module.id);
+/******/ 				}
+/******/ 			});
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -185,6 +265,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ass
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
