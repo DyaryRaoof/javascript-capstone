@@ -1,0 +1,62 @@
+class TvGetters {
+  static async getSeasons(id) {
+    const response = await fetch(`https://api.tvmaze.com/shows/${id}/seasons`, {
+      method: 'GET',
+      headers: {
+        'User-Agent': 'SchoolProject/1.0 This is a school project about working with APIS',
+        Accept: '*',
+      },
+    });
+    return response.json();
+  }
+
+  static async getEpisodes(id) {
+    const response = await fetch(`https://api.tvmaze.com/seasons/${id}/episodes`, {
+      method: 'GET',
+      headers: {
+        'User-Agent': 'SchoolProject/1.0 This is a school project about working with APIS',
+        Accept: '*',
+      },
+    });
+    return response.json();
+  }
+}
+
+const BASE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+
+const createNewApp = async () => {
+  const endpoint = 'apps';
+  const result = await fetch(BASE_URL + endpoint, {
+    method: 'POST',
+  });
+  const appId = await result.text();
+  return appId;
+};
+
+const sendComment = async (userName, comment, itemId) => {
+  const appId = localStorage.getItem('appId');
+  const endpoint = `apps/${appId}/comments`;
+  const data = { username: userName, comment, item_id: itemId };
+  const result = await fetch(BASE_URL + endpoint, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json; Charset=UTF-8',
+    },
+  });
+  const text = await result.text();
+  return text;
+};
+
+const getComments = async (itemId) => {
+  const appId = localStorage.getItem('appId');
+  const endpoint = `apps/${appId}/comments?item_id=${itemId}`;
+  const result = await fetch(BASE_URL + endpoint);
+  const text = await result.json();
+  return [text, result.status];
+};
+
+module.exports.createNewApp = createNewApp;
+module.exports.sendComment = sendComment;
+module.exports.getComments = getComments;
+module.exports.TvGetters = TvGetters;
