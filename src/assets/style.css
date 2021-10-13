@@ -207,6 +207,10 @@ footer div {
   font-size: 13px;
 }
 
+.likes span {
+  cursor: pointer;
+}
+
 .comment-btn {
   margin-top: 8px;
   width: 75%;
