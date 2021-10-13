@@ -1,20 +1,7 @@
 import '../assets/style.css';
 import './comments.js';
-import { TvGetters, createNewApp } from './api.js';
+import { TvGetters } from './api.js';
 import DomPopulating from './domPop.js';
-
-const saveAppId = async () => {
-  let appId;
-  appId = localStorage.getItem('appId');
-  if (!appId) {
-    appId = await createNewApp();
-    localStorage.setItem('appId', appId);
-  }
-};
-
-window.addEventListener('load', () => {
-  saveAppId();
-});
 
 const seasonListener = (info) => {
   const seasonItems = document.querySelectorAll('#bottom-header li');

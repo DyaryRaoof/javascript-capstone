@@ -1,4 +1,5 @@
 import { sendComment, getComments } from './api.js';
+import NoImage from '../assets/no_image.png';
 
 const addCommentsForm = document.querySelector('#add-comments-form');
 const commentsTable = document.querySelector('#comments-table');
@@ -32,17 +33,22 @@ const renderComments = async (comments) => {
   });
 };
 
-// const populatePopup = (episode) => {
-//   //   const episodeImage = document.querySelector('#episode-name img');
-//   //   const episodeName = document.querySelector('#episode-name');
-//   const episodeDescriptionItems = document.querySelector('.episode-description-item');
-//   //   episodeImage.src = '';
-//   //   episodeName.textContent = episode.name;
-//   episodeDescriptionItems[0].textContent = '';
-//   episodeDescriptionItems[1].textContent = '';
-//   episodeDescriptionItems[2].textContent = '';
-//   episodeDescriptionItems[3].textContent = '';
-// };
+const populatePopup = (episode) => {
+  const episodeImage = document.querySelector('#episode-img');
+  const episodeName = document.querySelector('#episode-name');
+  const episodeDescriptionItems = document.querySelectorAll('.episode-description-item');
+  const img = episode.image ? episode.image.medium : null;
+  if (!img) {
+    episodeImage.src = NoImage;
+  } else {
+    episodeImage.src = img;
+  }
+  episodeName.textContent = episode.name;
+  episodeDescriptionItems[0].textContent = `Duration : ${episode.runtime} minutes`;
+  episodeDescriptionItems[1].textContent = `Season No. : ${episode.number}`;
+  episodeDescriptionItems[2].textContent = `Episode No. : ${episode.season}`;
+  episodeDescriptionItems[3].textContent = `Release Date : ${episode.airdate}`;
+};
 
 const implementCloseButton = () => {
   const closeButton = document.querySelector('#close-button');
@@ -51,16 +57,15 @@ const implementCloseButton = () => {
   });
 };
 
-const showCommentsPopup = async () => {
+const showCommentsPopup = async (episode) => {
+  console.log(episode);
   commentsPopup.classList.remove('hide-popup');
   implementCloseButton();
-  //   populatePopup(episode);
-  const [comments, status] = await getComments('1234');
+  populatePopup(episode);
+  const [comments, status] = await getComments(episode.id);
   if (status === 200) {
     renderComments(comments);
   }
 };
-
-showCommentsPopup();
 
 export default showCommentsPopup;

@@ -1,4 +1,5 @@
 import NoImage from '../assets/no_image.png';
+import showCommentsPopup from './comments.js';
 
 export default class DomPopulating {
   static createSeason(n) {
@@ -14,12 +15,22 @@ export default class DomPopulating {
   static createEpisodes(list) {
     const epCont = document.querySelector('.container');
     epCont.innerHTML = '';
+
     list.forEach((ep) => {
       if (ep.image === null) {
-        epCont.innerHTML += `<div class="episode"><img src="${NoImage}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>0 likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
+        epCont.innerHTML += `<div id="${ep.id}" class="episode"><img src="${NoImage}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>0 likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
       } else {
-        epCont.innerHTML += `<div class="episode"><img src="${ep.image.medium}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>0 likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
+        epCont.innerHTML += `<div id="${ep.id}" class="episode"><img src="${ep.image.medium}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>0 likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
       }
+    });
+
+    const commentButtons = document.querySelectorAll('.comment-btn');
+    commentButtons.forEach((commentbtn) => {
+      commentbtn.addEventListener('click', (event) => {
+        const { id } = event.target.parentNode;
+        const episode = list.filter((a) => a.id.toString() === id)[0];
+        showCommentsPopup(episode);
+      });
     });
   }
 }
