@@ -1,6 +1,6 @@
 import '../assets/style.css';
 import './comments.js';
-import { TvGetters } from './api.js';
+import { TvGetters, getLikes } from './api.js';
 import DomPopulating from './domPop.js';
 
 const seasonListener = (info) => {
@@ -8,8 +8,15 @@ const seasonListener = (info) => {
   seasonItems.forEach((li, index) => {
     li.addEventListener('click', async () => {
       const { id } = info[index];
-      await TvGetters.getEpisodes(id).then((ep) => {
-        const episodeList = ep;
+      const episodeList = await TvGetters.getEpisodes(id);
+      const arr = await getLikes();
+      episodeList.forEach((episode) => {
+        const key = Object.keys(arr).find((key) => arr[key].item_id === `${episode.id}`);
+        if (arr[key] !== undefined) {
+          episode.likes = arr[key].likes;
+        } else {
+          episode.likes = 0;
+        }
         DomPopulating.createEpisodes(episodeList);
       });
     });
@@ -19,25 +26,28 @@ const seasonListener = (info) => {
 document.addEventListener('click', async (event) => {
   const { target } = event;
   if (target.innerText === 'Stranger Things') {
-    await TvGetters.getSeasons(2993).then((s) => {
-      const seasonInfo = s;
-      const seasonN = seasonInfo.length;
-      DomPopulating.createSeason(seasonN);
-      seasonListener(seasonInfo);
-    });
+    const seasonInfo = await TvGetters.getSeasons(2993);
+    const seasonN = seasonInfo.length;
+    DomPopulating.createSeason(seasonN);
+    seasonListener(seasonInfo);
   } else if (target.innerText === 'Heroes') {
-    await TvGetters.getSeasons(134).then((s) => {
-      const seasonInfo = s;
-      const seasonN = seasonInfo.length;
-      DomPopulating.createSeason(seasonN);
-      seasonListener(seasonInfo);
-    });
+    const seasonInfo = await TvGetters.getSeasons(134);
+    const seasonN = seasonInfo.length;
+    DomPopulating.createSeason(seasonN);
+    seasonListener(seasonInfo);
   } else if (target.innerText === 'Lost') {
-    await TvGetters.getSeasons(123).then((s) => {
-      const seasonInfo = s;
-      const seasonN = seasonInfo.length;
-      DomPopulating.createSeason(seasonN);
-      seasonListener(seasonInfo);
-    });
+    const seasonInfo = await TvGetters.getSeasons(123);
+    const seasonN = seasonInfo.length;
+    DomPopulating.createSeason(seasonN);
+    seasonListener(seasonInfo);
   }
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const seasonInfo = await TvGetters.getSeasons(2993);
+  const seasonN = seasonInfo.length;
+  DomPopulating.createSeason(seasonN);
+  seasonListener(seasonInfo);
+  const seasonItems = document.querySelectorAll('#bottom-header li');
+  seasonItems[0].click();
 });

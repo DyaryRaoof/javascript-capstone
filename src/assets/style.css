@@ -2,6 +2,24 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
+@keyframes multicolor {
+  0% {
+    color: rgba(255, 0, 0, 0.1);
+  }
+
+  33% {
+    color: rgba(202, 24, 24, 0.4);
+  }
+
+  66% {
+    color: rgba(90, 36, 36, 0.7);
+  }
+
+  100% {
+    color: black;
+  }
+}
+
 header ul > li {
   padding: 3px;
   font-size: 20px;
@@ -48,6 +66,7 @@ header ul {
 #bottom-header li {
   font-size: 20px;
   padding: 10px;
+  animation: 2s multicolor;
 }
 
 footer div {
@@ -178,6 +197,7 @@ footer div {
   padding: 5px;
   margin: 0;
   font-weight: 500;
+  width: 80%;
 }
 
 .likes {
