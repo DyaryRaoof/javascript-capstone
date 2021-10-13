@@ -58,7 +58,7 @@ const populatePopup = (episode, comments) => {
   if (comments.length > 0) {
     commentsCount.innerText = countComments(comments);
   } else {
-    commentsCount.innerText = '';
+    commentsCount.innerText = '0';
   }
 };
 
