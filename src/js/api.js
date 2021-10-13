@@ -23,19 +23,10 @@ class TvGetters {
 }
 
 const BASE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
-
-const createNewApp = async () => {
-  const endpoint = 'apps';
-  const result = await fetch(BASE_URL + endpoint, {
-    method: 'POST',
-  });
-  const appId = await result.text();
-  return appId;
-};
+const APP_ID = 'LFw4C11a2n9Ev9vjBV5l';
 
 const sendComment = async (userName, comment, itemId) => {
-  const appId = localStorage.getItem('appId');
-  const endpoint = `apps/${appId}/comments`;
+  const endpoint = `apps/${APP_ID}/comments`;
   const data = { username: userName, comment, item_id: itemId };
   const result = await fetch(BASE_URL + endpoint, {
     method: 'POST',
@@ -49,14 +40,30 @@ const sendComment = async (userName, comment, itemId) => {
 };
 
 const getComments = async (itemId) => {
-  const appId = localStorage.getItem('appId');
-  const endpoint = `apps/${appId}/comments?item_id=${itemId}`;
+  const endpoint = `apps/${APP_ID}/comments?item_id=${itemId}`;
   const result = await fetch(BASE_URL + endpoint);
   const text = await result.json();
   return [text, result.status];
 };
 
-module.exports.createNewApp = createNewApp;
+const getLikes = async () => {
+  const endpoint = `apps/${APP_ID}/likes/`
+  // const result = await fetch(BASE_URL + endpoint);
+  const data = {"item_id": "553946"}
+  const result = await fetch(BASE_URL + endpoint, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json; Charset=UTF-8',
+    },
+  });
+  const text = await result.json();
+  return text
+};
+
+console.log(getLikes())
+
 module.exports.sendComment = sendComment;
 module.exports.getComments = getComments;
+module.exports.getLikes = getLikes;
 module.exports.TvGetters = TvGetters;

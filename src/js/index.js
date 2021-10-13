@@ -1,6 +1,6 @@
 import '../assets/style.css';
 import './comments.js';
-import { TvGetters, createNewApp } from './api.js';
+import { TvGetters, getLikes } from './api.js';
 import DomPopulating from './domPop.js';
 
 const saveAppId = async () => {
@@ -23,8 +23,8 @@ const seasonListener = (info) => {
       const { id } = info[index];
       await TvGetters.getEpisodes(id).then((ep) => {
         const episodeList = ep;
-        DomPopulating.createEpisodes(episodeList);
       });
+      DomPopulating.createEpisodes(await episodeList);
     });
   });
 };
@@ -54,3 +54,16 @@ document.addEventListener('click', async (event) => {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await TvGetters.getSeasons(2993).then(async (s) => {
+    const seasonInfo = s;
+    const seasonN = seasonInfo.length;
+    DomPopulating.createSeason(seasonN);
+    seasonListener(seasonInfo);
+    await TvGetters.getEpisodes(seasonInfo[0].id).then((ep) => {
+      const episodeList = ep;
+      DomPopulating.createEpisodes(episodeList);
+    });
+  })
+})
