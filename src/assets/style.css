@@ -37,6 +37,10 @@ header ul > li > a {
   align-items: center;
 }
 
+.likes span {
+  cursor: pointer;
+}
+
 #logo,
 #logo > span {
   padding: 3px;

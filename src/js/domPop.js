@@ -1,5 +1,6 @@
 import NoImage from '../assets/no_image.png';
 import showCommentsPopup from './comments.js';
+import { sendLike } from './api.js';
 
 export default class DomPopulating {
   static createSeason(n) {
@@ -15,7 +16,6 @@ export default class DomPopulating {
   static createEpisodes(list) {
     const epCont = document.querySelector('.container');
     epCont.innerHTML = '';
-
     list.forEach((ep) => {
       if (ep.image === null) {
         epCont.innerHTML += `<div id="${ep.id}" class="episode"><img src="${NoImage}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>${ep.likes} likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
@@ -30,6 +30,21 @@ export default class DomPopulating {
         const { id } = event.target.parentNode;
         const episode = list.filter((a) => a.id.toString() === id)[0];
         showCommentsPopup(episode);
+      });
+    });
+    const likeButtons = document.querySelectorAll('span .material-icons');
+    likeButtons.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        const { id } = event.path[3];
+        const tgt = event.target;
+        if (tgt.innerHTML === 'favorite_border') {
+          tgt.innerHTML = 'favorite';
+          tgt.style.color = 'red';
+          const likes = tgt.parentNode.lastChild.nodeValue;
+          const number = parseInt(likes.split(' ')[0], 10);
+          tgt.parentNode.lastChild.textContent = `${number + 1} likes`;
+          sendLike(id);
+        }
       });
     });
   }

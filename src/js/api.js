@@ -55,6 +55,20 @@ const getComments = async (itemId) => {
   }
 };
 
+const sendLike = async (itemId) => {
+  const endpoint = `apps/${APP_ID}/likes/`;
+  const data = { item_id: itemId };
+  const result = await fetch(BASE_URL + endpoint, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json; Charset=UTF-8',
+    },
+  });
+  const text = await result.text();
+  return text;
+};
+
 const getLikes = async () => {
   const endpoint = `apps/${APP_ID}/likes/`;
   const result = await fetch(BASE_URL + endpoint);
@@ -64,5 +78,6 @@ const getLikes = async () => {
 
 module.exports.sendComment = sendComment;
 module.exports.getComments = getComments;
+module.exports.sendLike = sendLike;
 module.exports.getLikes = getLikes;
 module.exports.TvGetters = TvGetters;
