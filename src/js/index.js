@@ -3,19 +3,6 @@ import './comments.js';
 import { TvGetters, getLikes } from './api.js';
 import DomPopulating from './domPop.js';
 
-const saveAppId = async () => {
-  let appId;
-  appId = localStorage.getItem('appId');
-  if (!appId) {
-    appId = await createNewApp();
-    localStorage.setItem('appId', appId);
-  }
-};
-
-window.addEventListener('load', () => {
-  saveAppId();
-});
-
 const seasonListener = (info) => {
   const seasonItems = document.querySelectorAll('#bottom-header li');
   seasonItems.forEach((li, index) => {
@@ -24,16 +11,16 @@ const seasonListener = (info) => {
       await TvGetters.getEpisodes(id).then(async (ep) => {
         const episodeList = ep;
         await getLikes().then((arr) => {
-          episodeList.forEach(episode => {
-            let key = Object.keys(arr).find(key => arr[key].item_id === `${episode.id}`);
-            if (arr[key] !== undefined){
-              episode.likes = arr[key].likes
+          episodeList.forEach((episode) => {
+            const key = Object.keys(arr).find((key) => arr[key].item_id === `${episode.id}`);
+            if (arr[key] !== undefined) {
+              episode.likes = arr[key].likes;
             } else {
-              episode.likes = 0
+              episode.likes = 0;
             }
-          })
+          });
           DomPopulating.createEpisodes(episodeList);
-        })
+        });
       });
     });
   });
@@ -72,6 +59,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     DomPopulating.createSeason(seasonN);
     seasonListener(seasonInfo);
     const seasonItems = document.querySelectorAll('#bottom-header li');
-    seasonItems[0].click()
-  })
-})
+    seasonItems[0].click();
+  });
+});

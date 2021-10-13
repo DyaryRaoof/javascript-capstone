@@ -47,10 +47,10 @@ const getComments = async (itemId) => {
 };
 
 const getLikes = async () => {
-  const endpoint = `apps/${APP_ID}/likes/`
+  const endpoint = `apps/${APP_ID}/likes/`;
   const result = await fetch(BASE_URL + endpoint);
   const text = await result.json();
-  return text
+  return text;
 };
 
 module.exports.sendComment = sendComment;
