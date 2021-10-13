@@ -1,6 +1,6 @@
 import NoImage from '../assets/no_image.png';
 import showCommentsPopup from './comments.js';
-import {sendLike} from './api';
+import { sendLike } from './api.js';
 
 export default class DomPopulating {
   static createSeason(n) {
@@ -33,18 +33,19 @@ export default class DomPopulating {
       });
     });
     const likeButtons = document.querySelectorAll('span .material-icons');
-    likeButtons.forEach(btn => {
-      btn.addEventListener("click", (event) => {
-        const id = event.path[3].id;
+    likeButtons.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        const { id } = event.path[3];
         const tgt = event.target;
-        if (tgt.innerHTML === 'favorite_border'){
-        tgt.innerHTML = 'favorite';
-        tgt.style.color = 'red';
-        const likes = tgt.parentNode.lastChild.nodeValue;
-        const number = parseInt(likes.split(' ')[0]);
-        tgt.parentNode.lastChild.textContent = `${number + 1} likes`;
+        if (tgt.innerHTML === 'favorite_border') {
+          tgt.innerHTML = 'favorite';
+          tgt.style.color = 'red';
+          const likes = tgt.parentNode.lastChild.nodeValue;
+          const number = parseInt(likes.split(' ')[0], 10);
+          tgt.parentNode.lastChild.textContent = `${number + 1} likes`;
+          sendLike(id);
         }
-      })
-    })
+      });
+    });
   }
 }

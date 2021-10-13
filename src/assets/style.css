@@ -37,6 +37,10 @@ header ul > li > a {
   align-items: center;
 }
 
+.likes span {
+  cursor: pointer;
+}
+
 #logo,
 #logo > span {
   padding: 3px;
@@ -205,10 +209,6 @@ footer div {
   flex-direction: column;
   align-items: center;
   font-size: 13px;
-}
-
-.likes span {
-  cursor: pointer;
 }
 
 .comment-btn {

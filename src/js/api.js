@@ -66,9 +66,8 @@ const sendLike = async (itemId) => {
     },
   });
   const text = await result.text();
-  console.log(text);
+  return text;
 };
-
 
 const getLikes = async () => {
   const endpoint = `apps/${APP_ID}/likes/`;
