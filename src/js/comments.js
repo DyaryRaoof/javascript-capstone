@@ -1,5 +1,6 @@
 import { sendComment, getComments } from './api.js';
 import NoImage from '../assets/no_image.png';
+import countComments from './count-comments.js';
 
 const addCommentsForm = document.querySelector('#add-comments-form');
 const commentsTable = document.querySelector('#comments-table');
@@ -37,9 +38,10 @@ const renderComments = async (comments) => {
   }
 };
 
-const populatePopup = (episode) => {
+const populatePopup = (episode, comments) => {
   const episodeImage = document.querySelector('#episode-img');
   const episodeName = document.querySelector('#episode-name');
+  const commentsCount = document.querySelector('#comments-count');
   const episodeDescriptionItems = document.querySelectorAll('.episode-description-item');
   const img = episode.image ? episode.image.medium : null;
   if (!img) {
@@ -52,6 +54,12 @@ const populatePopup = (episode) => {
   episodeDescriptionItems[1].textContent = `Season No. : ${episode.number}`;
   episodeDescriptionItems[2].textContent = `Episode No. : ${episode.season}`;
   episodeDescriptionItems[3].textContent = `Release Date : ${episode.airdate}`;
+
+  if (comments.length > 0) {
+    commentsCount.innerText = countComments(comments);
+  } else {
+    commentsCount.innerText = '0';
+  }
 };
 
 const implementCloseButton = () => {
@@ -65,8 +73,9 @@ const showCommentsPopup = async (episode) => {
   submitButton.id = episode.id;
   commentsPopup.classList.remove('hide-popup');
   implementCloseButton();
-  populatePopup(episode);
   const [comments] = await getComments(episode.id);
+  populatePopup(episode, comments);
+
   renderComments(comments);
 };
 
