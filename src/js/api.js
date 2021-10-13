@@ -41,17 +41,18 @@ const sendComment = async (userName, comment, itemId) => {
 
 const getComments = async (itemId) => {
   const endpoint = `apps/${APP_ID}/comments?item_id=${itemId}`;
-  let response;
-  await fetch(BASE_URL + endpoint)
-    .then((res) => {
-      response = res;
-      if (res.ok) {
-        return res.json();
-      }
+  let result;
+  try {
+    result = await fetch(BASE_URL + endpoint);
+    if (result.status === 400) {
       throw new Error("couldn't fetch");
-    })
-    .then((json) => [json, response.status])
-    .catch((e) => console.log(e));
+    } else {
+      const json = await result.json();
+      return [json];
+    }
+  } catch (e) {
+    return [e];
+  }
 };
 
 module.exports.sendComment = sendComment;

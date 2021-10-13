@@ -4,8 +4,9 @@ import NoImage from '../assets/no_image.png';
 const addCommentsForm = document.querySelector('#add-comments-form');
 const commentsTable = document.querySelector('#comments-table');
 const commentsPopup = document.querySelector('#comments');
+const submitButton = document.querySelector('#submit-button');
 
-const addComment = async () => {
+const addComment = async (commentId) => {
   const name = addCommentsForm.elements[0];
   const comment = addCommentsForm.elements[1];
   const date = new Date().toLocaleDateString();
@@ -13,7 +14,7 @@ const addComment = async () => {
 
   const div = document.createElement('div');
   div.innerText = data;
-  const res = await sendComment(name.value, comment.value, '1234');
+  const res = await sendComment(name.value, comment.value, commentId);
   if (res === 'Created') {
     commentsTable.appendChild(div);
   }
@@ -21,16 +22,19 @@ const addComment = async () => {
 
 addCommentsForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  addComment();
+  addComment(submitButton.id);
 });
 
 const renderComments = async (comments) => {
-  comments.forEach((comment) => {
-    const data = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
-    const div = document.createElement('div');
-    div.innerText = data;
-    commentsTable.appendChild(div);
-  });
+  commentsTable.innerHTML = '';
+  if (comments.length > 0) {
+    comments.forEach((comment) => {
+      const data = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
+      const div = document.createElement('div');
+      div.innerText = data;
+      commentsTable.appendChild(div);
+    });
+  }
 };
 
 const populatePopup = (episode) => {
@@ -58,14 +62,12 @@ const implementCloseButton = () => {
 };
 
 const showCommentsPopup = async (episode) => {
-  console.log(episode);
+  submitButton.id = episode.id;
   commentsPopup.classList.remove('hide-popup');
   implementCloseButton();
   populatePopup(episode);
-  const [comments, status] = await getComments(episode.id);
-  if (status === 200) {
-    renderComments(comments);
-  }
+  const [comments] = await getComments(episode.id);
+  renderComments(comments);
 };
 
 export default showCommentsPopup;
