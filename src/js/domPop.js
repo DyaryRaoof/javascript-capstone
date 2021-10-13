@@ -48,15 +48,30 @@ export default class DomPopulating {
       });
     });
   }
-  static episodeCounter(item, info) {
+
+  static episodeCounter(item) {
     const countEpisodes = document.querySelectorAll('.episode').length;
-    const seasonSave = document.querySelector('#bottom-header')
-    console.log(seasonSave.innerText)
+    const seasonSave = document.querySelectorAll('#bottom-header li');
+    seasonSave.forEach((child) => {
+      const [temp] = child.innerText.split('(', 10);
+      child.innerText = temp;
+    });
     const save = item.innerHTML;
     item.innerHTML = `${save}(${countEpisodes} episodes)`;
-
+    return countEpisodes;
   }
+
   static seasonCounter(item) {
-    console.log('placeholder')
+    const countSeasons = document.querySelectorAll('#bottom-header li').length;
+    const showSave = document.querySelectorAll('#top-header li');
+    showSave.forEach((child) => {
+      if (child.id !== 'logo') {
+        const [temp] = child.innerText.split('(', 10);
+        child.innerText = temp;
+      }
+    });
+    const save = item.innerHTML;
+    item.innerHTML = `${save}(${countSeasons} seasons)`;
+    return countSeasons;
   }
 }
