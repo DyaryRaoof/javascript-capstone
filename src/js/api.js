@@ -41,9 +41,18 @@ const sendComment = async (userName, comment, itemId) => {
 
 const getComments = async (itemId) => {
   const endpoint = `apps/${APP_ID}/comments?item_id=${itemId}`;
-  const result = await fetch(BASE_URL + endpoint);
-  const text = await result.json();
-  return [text, result.status];
+  let result;
+  try {
+    result = await fetch(BASE_URL + endpoint);
+    if (result.status === 400) {
+      throw new Error("couldn't fetch");
+    } else {
+      const json = await result.json();
+      return [json];
+    }
+  } catch (e) {
+    return [e];
+  }
 };
 
 const getLikes = async () => {
@@ -52,6 +61,8 @@ const getLikes = async () => {
   const text = await result.json();
   return text;
 };
+
+
 
 module.exports.sendComment = sendComment;
 module.exports.getComments = getComments;
