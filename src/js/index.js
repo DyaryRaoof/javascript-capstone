@@ -6,7 +6,7 @@ import DomPopulating from './domPop.js';
 const seasonListener = (info) => {
   const seasonItems = document.querySelectorAll('#bottom-header li');
   seasonItems.forEach((li, index) => {
-    li.addEventListener('click', async () => {
+    li.addEventListener('click', async (event) => {
       const { id } = info[index];
       const episodeList = await TvGetters.getEpisodes(id);
       const arr = await getLikes();
@@ -19,6 +19,7 @@ const seasonListener = (info) => {
         }
       });
       DomPopulating.createEpisodes(episodeList);
+      DomPopulating.episodeCounter(event.target, info) 
     });
   });
 };
@@ -29,16 +30,19 @@ document.addEventListener('click', async (event) => {
     const seasonInfo = await TvGetters.getSeasons(2993);
     const seasonN = seasonInfo.length;
     DomPopulating.createSeason(seasonN);
+    DomPopulating.seasonCounter
     seasonListener(seasonInfo);
   } else if (target.innerText === 'Heroes') {
     const seasonInfo = await TvGetters.getSeasons(134);
     const seasonN = seasonInfo.length;
     DomPopulating.createSeason(seasonN);
+    DomPopulating.seasonCounter
     seasonListener(seasonInfo);
   } else if (target.innerText === 'Lost') {
     const seasonInfo = await TvGetters.getSeasons(123);
     const seasonN = seasonInfo.length;
     DomPopulating.createSeason(seasonN);
+    DomPopulating.seasonCounter
     seasonListener(seasonInfo);
   }
 });

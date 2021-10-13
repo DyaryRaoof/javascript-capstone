@@ -48,4 +48,15 @@ export default class DomPopulating {
       });
     });
   }
+  static episodeCounter(item, info) {
+    const countEpisodes = document.querySelectorAll('.episode').length;
+    const seasonSave = document.querySelector('#bottom-header')
+    console.log(seasonSave.innerText)
+    const save = item.innerHTML;
+    item.innerHTML = `${save}(${countEpisodes} episodes)`;
+
+  }
+  static seasonCounter(item) {
+    console.log('placeholder')
+  }
 }
