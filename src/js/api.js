@@ -62,8 +62,6 @@ const getLikes = async () => {
   return text;
 };
 
-
-
 module.exports.sendComment = sendComment;
 module.exports.getComments = getComments;
 module.exports.getLikes = getLikes;
