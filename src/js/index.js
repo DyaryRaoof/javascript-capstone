@@ -17,8 +17,8 @@ const seasonListener = (info) => {
         } else {
           episode.likes = 0;
         }
-        DomPopulating.createEpisodes(episodeList);
       });
+      DomPopulating.createEpisodes(episodeList);
     });
   });
 };
