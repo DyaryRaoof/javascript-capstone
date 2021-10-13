@@ -48,20 +48,10 @@ const getComments = async (itemId) => {
 
 const getLikes = async () => {
   const endpoint = `apps/${APP_ID}/likes/`
-  // const result = await fetch(BASE_URL + endpoint);
-  const data = {"item_id": "553946"}
-  const result = await fetch(BASE_URL + endpoint, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json; Charset=UTF-8',
-    },
-  });
+  const result = await fetch(BASE_URL + endpoint);
   const text = await result.json();
   return text
 };
-
-console.log(getLikes())
 
 module.exports.sendComment = sendComment;
 module.exports.getComments = getComments;

@@ -16,9 +16,9 @@ export default class DomPopulating {
     epCont.innerHTML = '';
     list.forEach((ep) => {
       if (ep.image === null) {
-        epCont.innerHTML += `<div id="${ep.id}" class="episode"><img src="${NoImage}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>0 likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
+        epCont.innerHTML += `<div id="${ep.id}" class="episode"><img src="${NoImage}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>${ep.likes} likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
       } else {
-        epCont.innerHTML += `<div id="${ep.id}" class="episode"><img src="${ep.image.medium}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>0 likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
+        epCont.innerHTML += `<div id="${ep.id}" class="episode"><img src="${ep.image.medium}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>${ep.likes} likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
       }
     });
   }

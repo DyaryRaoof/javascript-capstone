@@ -21,10 +21,20 @@ const seasonListener = (info) => {
   seasonItems.forEach((li, index) => {
     li.addEventListener('click', async () => {
       const { id } = info[index];
-      await TvGetters.getEpisodes(id).then((ep) => {
+      await TvGetters.getEpisodes(id).then(async (ep) => {
         const episodeList = ep;
+        await getLikes().then((arr) => {
+          episodeList.forEach(episode => {
+            let key = Object.keys(arr).find(key => arr[key].item_id === `${episode.id}`);
+            if (arr[key] !== undefined){
+              episode.likes = arr[key].likes
+            } else {
+              episode.likes = 0
+            }
+          })
+          DomPopulating.createEpisodes(episodeList);
+        })
       });
-      DomPopulating.createEpisodes(await episodeList);
     });
   });
 };
@@ -61,9 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const seasonN = seasonInfo.length;
     DomPopulating.createSeason(seasonN);
     seasonListener(seasonInfo);
-    await TvGetters.getEpisodes(seasonInfo[0].id).then((ep) => {
-      const episodeList = ep;
-      DomPopulating.createEpisodes(episodeList);
-    });
+    const seasonItems = document.querySelectorAll('#bottom-header li');
+    seasonItems[0].click()
   })
 })
