@@ -1,6 +1,7 @@
 import NoImage from '../assets/no_image.png';
 import showCommentsPopup from './comments.js';
 import { sendLike } from './api.js';
+import { episodeCount, seasonCount } from './item-count.js';
 
 export default class DomPopulating {
   static createSeason(n) {
@@ -50,19 +51,18 @@ export default class DomPopulating {
   }
 
   static episodeCounter(item) {
-    const countEpisodes = document.querySelectorAll('.episode').length;
+    const counter = episodeCount();
     const seasonSave = document.querySelectorAll('#bottom-header li');
     seasonSave.forEach((child) => {
       const [temp] = child.innerText.split('(', 10);
       child.innerText = temp;
     });
     const save = item.innerHTML;
-    item.innerHTML = `${save}(${countEpisodes} episodes)`;
-    return countEpisodes;
+    item.innerHTML = `${save}(${counter} episodes)`;
   }
 
   static seasonCounter(item) {
-    const countSeasons = document.querySelectorAll('#bottom-header li').length;
+    const counter = seasonCount();
     const showSave = document.querySelectorAll('#top-header li');
     showSave.forEach((child) => {
       if (child.id !== 'logo') {
@@ -71,7 +71,6 @@ export default class DomPopulating {
       }
     });
     const save = item.innerHTML;
-    item.innerHTML = `${save}(${countSeasons} seasons)`;
-    return countSeasons;
+    item.innerHTML = `${save}(${counter} seasons)`;
   }
 }
