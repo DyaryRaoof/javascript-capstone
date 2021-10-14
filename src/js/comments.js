@@ -72,6 +72,7 @@ const implementCloseButton = () => {
 const showCommentsPopup = async (episode) => {
   submitButton.id = episode.id;
   commentsPopup.classList.remove('hide-popup');
+  commentsPopup.scrollIntoView();
   implementCloseButton();
   const [comments] = await getComments(episode.id);
   populatePopup(episode, comments);
