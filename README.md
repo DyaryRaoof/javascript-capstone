@@ -22,6 +22,9 @@ The website displays the seasons and episodes of three chosen TV shows, as well 
 
 [Live Demo Link](https://dyaryraoof.github.io/javascript-capstone/dist)
 
+## Demo Video
+[Demo Video](https://drive.google.com/file/d/1T2iqPsr-g0i2x4ylDuaJfs33elqP4gnw/view?usp=sharing)
+
 ## Getting Started
 
 
