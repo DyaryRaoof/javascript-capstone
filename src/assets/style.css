@@ -88,6 +88,8 @@ footer div {
   top: 0;
   left: 0;
   z-index: 111;
+  width: 60vw;
+  max-width: 850px;
 }
 
 #close-button-wrapper {
