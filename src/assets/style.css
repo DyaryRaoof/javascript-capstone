@@ -1,0 +1,221 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+@keyframes multicolor {
+  0% {
+    color: rgba(255, 0, 0, 0.1);
+  }
+
+  33% {
+    color: rgba(202, 24, 24, 0.4);
+  }
+
+  66% {
+    color: rgba(90, 36, 36, 0.7);
+  }
+
+  100% {
+    color: black;
+  }
+}
+
+header ul > li {
+  padding: 3px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+footer a,
+header ul > li > a {
+  color: black;
+  text-decoration: none;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+.likes span {
+  cursor: pointer;
+}
+
+#logo,
+#logo > span {
+  padding: 3px;
+  font-size: 40px;
+  color: red;
+}
+
+#top-header li {
+  padding: 20px;
+}
+
+header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#bottom-header {
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+#bottom-header li {
+  font-size: 20px;
+  padding: 10px;
+  animation: 2s multicolor;
+}
+
+footer div {
+  width: 100%;
+  padding: 40px 25px;
+  border-top: 1px solid black;
+}
+
+#comments {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 0 20%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 111;
+  width: 60vw;
+  max-width: 850px;
+}
+
+#close-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#close-button-wrapper span {
+  margin-left: auto;
+  padding: 10px;
+}
+
+#episode-description-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  margin: 60px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 25px 10px;
+}
+
+.episode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.episode img {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+#episode-description-wrapper img {
+  width: 40%;
+}
+
+#episode-description-wrapper h1 {
+  text-align: center;
+}
+
+#episode-description-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+#episode-description-items span {
+  padding: 10px;
+  font-size: 17px;
+  margin: 0 10%;
+}
+
+#comments-table-wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#comments-table-wrapper h2 {
+  text-align: center;
+}
+
+#comments form {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 30%;
+}
+
+#comments form input {
+  width: 100px;
+}
+
+#comments form textarea {
+  height: 100px;
+  resize: none;
+}
+
+#comments form input,
+#comments form textarea {
+  border: 2px solid black;
+  margin: 10px;
+}
+
+#comments form button {
+  width: 100px;
+  margin: 10px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.hide-popup {
+  display: none;
+}
+
+#close-button {
+  cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.d-flex p {
+  padding: 5px;
+  margin: 0;
+  font-weight: 500;
+  width: 80%;
+}
+
+.likes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+}
+
+.comment-btn {
+  margin-top: 8px;
+  width: 75%;
+  height: 30px;
+  font-size: 1em;
+}
