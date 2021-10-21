@@ -18,17 +18,32 @@ export default class DomPopulating {
     const epCont = document.querySelector('.container');
     epCont.innerHTML = '';
     list.forEach((ep) => {
+      let image;
+
       if (ep.image === null) {
-        epCont.innerHTML += `<div id="${ep.id}" class="episode"><img src="${NoImage}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>${ep.likes} likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
+        image = NoImage;
       } else {
-        epCont.innerHTML += `<div id="${ep.id}" class="episode"><img src="${ep.image.medium}" alt=""><div class="d-flex"><p>${ep.name}</p> <span class="likes"><span class="material-icons">favorite_border</span>${ep.likes} likes</span></div><button class="comment-btn" type="button">Comments</button></div>`;
+        image = ep.image.medium;
       }
+
+      const html = `
+      <div  id="${ep.id}" class="card episode">
+      <img class="card-img-top" src="${image}" alt="${ep.name}"/>
+      <div class="card-body">
+        <h5 class="card-title">${ep.name}</h5>
+        <div class="comment-btn-wrapper">
+        <span class="likes"><span class="material-icons">favorite_border</span>${ep.likes} likes</span>
+        <button id="${ep.id}" class="comment-btn btn" type="button">Comments</button>
+        </div>
+      </div>
+    </div>`;
+      epCont.innerHTML += html;
     });
 
     const commentButtons = document.querySelectorAll('.comment-btn');
     commentButtons.forEach((commentbtn) => {
       commentbtn.addEventListener('click', (event) => {
-        const { id } = event.target.parentNode;
+        const { id } = event.target;
         const episode = list.filter((a) => a.id.toString() === id)[0];
         showCommentsPopup(episode);
       });

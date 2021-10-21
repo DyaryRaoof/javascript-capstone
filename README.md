@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Starlite Shows
 
 > On this capstone we created a website using the TvMaze API
 
@@ -28,7 +28,7 @@ The website displays the seasons and episodes of three chosen TV shows, as well 
 ## Getting Started
 
 
-- Clone the repository with git clone https://github.com/leolpaz/Leaderboard.git;
+- Clone the repository with git clone https://github.com/DyaryRaoof/javascript-capstone.git;
 - Open the cloned folder on the IDE of your choice;
 - Install dependencies with npm i;
 - Use npm start to start the website;

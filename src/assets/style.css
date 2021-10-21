@@ -1,5 +1,7 @@
 body {
   font-family: 'Ubuntu', sans-serif;
+  background-color: black;
+  color: white;
 }
 
 @keyframes multicolor {
@@ -28,7 +30,7 @@ header ul > li {
 
 footer a,
 header ul > li > a {
-  color: black;
+  color: #f00;
   text-decoration: none;
 }
 
@@ -46,6 +48,10 @@ header ul > li > a {
   padding: 3px;
   font-size: 40px;
   color: red;
+}
+
+#top-header {
+  border-bottom: 2px solid #950101;
 }
 
 #top-header li {
@@ -80,10 +86,10 @@ footer div {
 }
 
 #comments {
-  border: 2px solid black;
+  border: 2px solid white;
   padding: 10px;
   margin: 0 20%;
-  background-color: white;
+  background-color: #3d0000;
   position: absolute;
   top: 0;
   left: 0;
@@ -126,6 +132,8 @@ footer div {
 .episode img {
   width: 100%;
   margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 20px 20px 0 0;
 }
 
 #episode-description-wrapper img {
@@ -181,7 +189,7 @@ footer div {
 #comments form button {
   width: 100px;
   margin: 10px;
-  background-color: white;
+  background-color: #950101;
   font-weight: bold;
 }
 
@@ -215,7 +223,26 @@ footer div {
 
 .comment-btn {
   margin-top: 8px;
-  width: 75%;
+  width: 100%;
   height: 30px;
   font-size: 1em;
+  background-color: #950101;
+  color: white;
+  justify-self: flex-end;
+}
+
+.card {
+  background-color: #3d0000;
+  border-radius: 20px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-btn-wrapper {
+  width: 100%;
 }
